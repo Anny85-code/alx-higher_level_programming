@@ -6,5 +6,5 @@ for i in range(number):
         print("is positive")
     elif i == 0:
         print("is zero")
-    else:
+    elif i < 0:
         print("is negative")
