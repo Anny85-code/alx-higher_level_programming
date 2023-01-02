@@ -1,37 +1,30 @@
 #!/usr/bin/python3
+
+""" Define a  class Square."""
+
+
+
+
+
 class Square:
 
-    """ A class that defines a square by its size
-
-    """
-
-    def __init__(self, size=0):
-
-        """ Method to initialize the square object
-
-        """
-
-        if not isinstance(size, int):
-
-            raise TypeError("size must be an integer")
-
-        elif size < 0:
-
-            raise ValueError("size must be >= 0")
-
-        else:
-
-            self.__size = size
+    """Represent a square."""
 
 
 
-    def area(self):
+    def __init__(self, size):
 
-        """ Method that returns the square are of the object
+        """Initialize a new square.
+
+
+
+        Args:
+
+            size (int): The size of the new square.
 
         """
 
-        return (self.__size ** 2)
+        self.size = size
 
 
 
@@ -39,21 +32,15 @@ class Square:
 
     def size(self):
 
-        """ Method to returns the size value
+        """Get/set the current size of the square."""
 
-        """
-
-        return self.__size
+        return (self.__size)
 
 
 
     @size.setter
 
     def size(self, value):
-
-        """ Method to set the size value of the square object
-
-        """
 
         if not isinstance(value, int):
 
@@ -63,30 +50,28 @@ class Square:
 
             raise ValueError("size must be >= 0")
 
-        else:
+        self.__size = value
 
-            self.__size = value
+
+
+    def area(self):
+
+        """Return the current area of the square."""
+
+        return (self.__size * self.__size)
 
 
 
     def my_print(self):
 
-        """ Method that prints a # square according
+        """Print the square with the # character."""
 
-        to the size value
+        for i in range(0, self.__size):
 
-        """
+            [print("#", end="") for j in range(self.__size)]
 
-        if not self.__size:
+            print("")
 
-            print()
+        if self.__size == 0:
 
-        else:
-
-            for i in range(self.__size):
-
-                for j in range(self.__size):
-
-                    print("#", end='')
-
-                print()
+            print("")
