@@ -3,7 +3,6 @@
  """Define a Magic Class matching exactly a bytecode provided by Holberton."""
 
 
-
 import math
 
 
